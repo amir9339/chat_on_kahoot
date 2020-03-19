@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+input, input:focus, input:visited, input:active {
+    outline: none;
+    border: none;
+}
+
+.main_title {
+    font-size: 80px;
+    font-weight: bolder;
+}

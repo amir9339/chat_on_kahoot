@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+{% endblock %}
+
+
+{% block body %}
+
+<div class="chat_wrapper">
+    <div class="main_messages_wrapper">
+        <div class="message_wrapper" id="friend_message_wrapper">
+            <p class="message_author_name">{{ username }}</p>
+            <p class="message_p">Bla blasad fdsnbfdsa fdsa adfs asfd</p>
+        </div>
+    </div>
+
+    <form class="chat_input_wrapper" onsubmit="send_message(); return false">
+        <input class="chat_input_box" type="text" placeholder="Type a message" >
+        <button type="button" class="send_button" onclick="send_message()">Send</button>
+    </form>
+</div>
+
+
+
+<div class="weights_wrapper">
+    <img src="../static/img/weights.png" alt="WEIGHTS" class="weights">
+</div>
+
+<script>
+</script>
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
+{% endblock %}

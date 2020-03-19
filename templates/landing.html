@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+
+{% block head%}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+{% endblock %}
+
+
+{% block body%}
+<div class="wrapper">
+    <h1 class="main_title">KAHOOT, TEMPORARILY</h1>
+    <div class="inputs">
+        <input type="text" name="username" id="username" placeholder="USERNAME">
+        <input type="text" name="gamepin" id="gamepin" placeholder="GAME PIN">
+        <button onclick="connect()">CONNECT</button>
+    </div>
+</div>
+<img src="{{ url_for('static', filename='img/mao.png') }}" alt="MAO" id="mao">
+<script src="{{ url_for('static', filename='js/landing.js') }}"></script>
+{% endblock %}
