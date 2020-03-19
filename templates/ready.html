@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ready.css') }}">
+{% endblock %}
+
+
+{% block body %}
+<h1 class="main_title">GAME PIN: {{ pin }}<br>USERNAME: {{ username }}</h1>
+
+<div class="players_container">
+    <div class="pending_players">
+        <h2 class="connected_players">PENDING PLAYERS</h2>
+        <h5 class="players">
+            {% for user in pending_users %}
+                {{ user }}, 
+            {% endfor %}
+        </h5>
+    </div>
+    <div class="ready_players">
+        <h2 class="connected_players">READY PLAYERS</h2>
+        <h5 class="players">
+            {% for user in ready_users %}
+                {{ user }}, 
+            {% endfor %}
+        </h5>
+    </div>
+</div>
+
+<h1 class="ready">READY</h1>
+<div class="weights_wrapper">
+    <img src="../static/img/weights.png" alt="WEIGHTS" class="weights">
+</div>
+
+<script>
+</script>
+<script src="{{ url_for('static', filename='js/ready.js') }}"></script>
+
+{% endblock %}

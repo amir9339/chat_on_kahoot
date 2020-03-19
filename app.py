@@ -1,47 +1,21 @@
-<<<<<<< Updated upstream
-from flask import Flask, render_template, url_for
-from flask_socketio import SocketIO
-=======
 from flask import Flask, render_template, request, redirect, make_response
 from flask_socketio import SocketIO, send, emit, join_room, leave_room
 from models.room import Room
->>>>>>> Stashed changes
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
-<<<<<<< Updated upstream
-connected_users = 0
-TOTAL_PLAYER_NUM = 2
-=======
 rooms = {}
 for room_num in range(100):
     rooms[room_num] = Room(room_num)
 
->>>>>>> Stashed changes
 
 @app.route('/')
 def index():
     return render_template('landing.html')
 
 
-<<<<<<< Updated upstream
-@socketio.on('message')
-def handle_message(message):
-    print('received message: ' + message)
-    message_type = 
-    username = 
-    userid = 
-    
-    if message[0:1] == "hi":
-        connected_users += 1
-    if connected_users == TOTAL_PLAYER_NUM:
-        send("The other username is: {}".format(username))
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port = 8000)
-=======
 @app.route('/enter_room')
 def enter_room():
     # Get Username and Gamepin and store in cookie
@@ -111,4 +85,3 @@ def disconnecting():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port = 5000, debug=True)
->>>>>>> Stashed changes
